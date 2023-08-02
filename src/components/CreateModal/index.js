@@ -4,6 +4,7 @@ import schema from './schema'
 import { Container, FormContainer, Title } from './styles'
 import { Input, InputPrice } from '../Input'
 import { Select } from '../Select'
+import { useTransactions } from '../../hooks/useTransactions'
 
 const options = [
   {
@@ -17,6 +18,8 @@ const options = [
 ]
 
 export const CreateModal = ({ isOpen, handleClose }) => {
+  const { createTransaction } = useTransactions()
+
   const convertCurrencyToNumber = value => {
     const sanitizedValue = value?.replace(/[^\d.,]/g, '')
     const hasDecimalSeparator = sanitizedValue?.includes(',')
