@@ -1,8 +1,16 @@
+import { Header } from './components/Header'
+import { TransactionList } from './components/TransactionList'
+import { GlobalStyle, MainContent } from './styles/global'
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header"></header>
-    </div>
+    <>
+      <GlobalStyle />
+      <MainContent>
+        <Header />
+        <TransactionList />
+      </MainContent>
+    </>
   )
 }
 
