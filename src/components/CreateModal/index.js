@@ -1,7 +1,7 @@
 import { ConfigProvider, Modal } from 'antd'
-import { Form, Formik } from 'formik'
+import { Formik } from 'formik'
 import schema from './schema'
-import { Container, Title } from './styles'
+import { Container, FormContainer, Title } from './styles'
 import { Input, InputPrice } from '../Input'
 import { Select } from '../Select'
 
@@ -79,7 +79,7 @@ export const CreateModal = ({ isOpen, handleClose }) => {
             onSubmit={handleSubmit}
           >
             {({ values, setValues }) => (
-              <Form>
+              <FormContainer>
                 <Input label="Título*:" name="title" />
                 <Select options={options} label="Tipo*:" name="type" />
                 <InputPrice
@@ -94,7 +94,7 @@ export const CreateModal = ({ isOpen, handleClose }) => {
                   onValueChange={value => handleInputChange(value, setValues)}
                 />
                 <Input label="Categoria*:" name="category" />
-              </Form>
+              </FormContainer>
             )}
           </Formik>
         </Container>
