@@ -26,6 +26,7 @@ export const Select = ({ label, style, options, name, ...rest }) => {
         onChange={field.onChange}
         {...rest}
       >
+        <option value="">Selecione uma opção</option>
         {options.map(item => (
           <option value={item.value}>{item.label}</option>
         ))}

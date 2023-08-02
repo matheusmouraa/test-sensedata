@@ -10,3 +10,8 @@ export const Container = styled.div`
 
   background: #333;
 `
+
+export const Title = styled.h2`
+  font-size: 23px;
+  font-weight: 600;
+`
