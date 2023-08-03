@@ -4,7 +4,7 @@ export const ValuesCard = ({ title, color, value }) => {
   return (
     <Container color={color}>
       <Title>{title}</Title>
-      <Value>R$ {value}</Value>
+      <Value>{value}</Value>
     </Container>
   )
 }

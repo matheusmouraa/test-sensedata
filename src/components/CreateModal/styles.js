@@ -10,9 +10,9 @@ export const Container = styled.div`
 
   width: 100%;
 
-  background: #333;
+  background: #f5f8fa;
 
-  color: #f5f8fa;
+  color: #131313;
 `
 
 export const FormContainer = styled(Form)`

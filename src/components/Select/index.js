@@ -9,7 +9,7 @@ export const Select = ({ label, style, options, name, ...rest }) => {
       {label && (
         <Label
           style={{
-            color: `${meta.touched && meta.error ? 'red' : '#f5f8fa'}`
+            color: `${meta.touched && meta.error ? 'red' : '#131313'}`
           }}
         >
           {label}

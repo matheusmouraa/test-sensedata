@@ -1,5 +1,5 @@
 import { useTransactions } from '../../hooks/useTransactions'
-import { ConfigProvider, Modal } from 'antd'
+import { Modal } from 'antd'
 import { v4 } from 'uuid'
 import { Formik } from 'formik'
 import schema from './schema'
@@ -64,88 +64,80 @@ export const CreateModal = ({ isOpen, handleClose }) => {
     createTransaction(payload)
     actions.resetForm()
     toast.success('Transacão salva com sucesso.', {
-      position: toast.POSITION.TOP_RIGHT,
-      bodyStyle: { color: '#000' }
+      position: toast.POSITION.TOP_RIGHT
     })
+    handleClose()
   }
 
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          colorBgBase: '#333'
-        }
+    <Modal
+      open={isOpen}
+      onCancel={handleClose}
+      footer={null}
+      width="95%"
+      style={{
+        maxWidth: '500px'
       }}
     >
-      <Modal
-        open={isOpen}
-        onCancel={handleClose}
-        footer={null}
-        width="95%"
-        style={{
-          maxWidth: '500px'
-        }}
-      >
-        <Container>
-          <Title>
-            Preencha todas as informações abaixo para adicionar uma nova
-            transação.
-          </Title>
-          <Formik
-            initialValues={{
-              title: '',
-              type: '',
-              category: '',
-              value: ''
-            }}
-            validationSchema={schema}
-            onSubmit={handleSubmit}
-          >
-            {({ values, setValues, errors }) => (
-              <FormContainer>
-                <Input label="Título*:" name="title" value={values.title} />
+      <Container>
+        <Title>
+          Preencha todas as informações abaixo para adicionar uma nova
+          transação.
+        </Title>
+        <Formik
+          initialValues={{
+            title: '',
+            type: '',
+            category: '',
+            value: ''
+          }}
+          validationSchema={schema}
+          onSubmit={handleSubmit}
+        >
+          {({ values, setValues, errors }) => (
+            <FormContainer>
+              <Input label="Título*:" name="title" value={values.title} />
 
-                <Select
-                  options={options}
-                  label="Tipo*:"
-                  name="type"
-                  defaultValue={values.type ?? ''}
-                />
+              <Select
+                options={options}
+                label="Tipo*:"
+                name="type"
+                defaultValue={values.type ?? ''}
+              />
 
-                <InputPrice
-                  label="Valor*:"
-                  placeholder="R$ 00,00"
-                  prefix="R$ "
-                  decimalSeparator=","
-                  groupSeparator="."
-                  decimalScale={2}
-                  allowNegativeValue={false}
-                  value={values.value}
-                  onValueChange={value => handleInputChange(value, setValues)}
-                  error={errors.value}
-                />
+              <InputPrice
+                label="Valor*:"
+                placeholder="R$ 00,00"
+                prefix="R$ "
+                decimalSeparator=","
+                groupSeparator="."
+                decimalScale={2}
+                allowNegativeValue={false}
+                value={values.value}
+                onValueChange={value => handleInputChange(value, setValues)}
+                error={errors.value}
+              />
 
-                <Input
-                  label="Categoria*:"
-                  name="category"
-                  value={values.category}
-                />
+              <Input
+                label="Categoria*:"
+                name="category"
+                value={values.category}
+              />
 
-                <Button
-                  style={{
-                    width: '200px',
-                    alignSelf: 'flex-end',
-                    marginTop: '10px'
-                  }}
-                  type="submit"
-                >
-                  Salvar
-                </Button>
-              </FormContainer>
-            )}
-          </Formik>
-        </Container>
-      </Modal>
-    </ConfigProvider>
+              <Button
+                style={{
+                  width: '200px',
+                  alignSelf: 'flex-end',
+                  marginTop: '10px'
+                }}
+                type="submit"
+              >
+                Salvar
+              </Button>
+            </FormContainer>
+          )}
+        </Formik>
+      </Container>
+    </Modal>
   )
 }

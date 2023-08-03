@@ -1,30 +1,29 @@
 import { styled } from 'styled-components'
 
-export const Container = styled.tr`
-  @media (max-width: 600px) {
-    border-bottom: 3px solid #ddd;
-    display: block;
-    margin-bottom: 0.625em;
-  }
-`
+import { Trash, TrendingDown, TrendingUp } from 'react-feather'
+
+export const Container = styled.tr``
 
 export const Label = styled.td`
-  padding: 1rem 2rem;
-  border: 0;
-  border-radius: 0.25rem;
+  padding: 16px 32px;
 
-  @media (max-width: 600px) {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: 0.8em;
-    text-align: right;
-    font-size: 1rem;
+  text-align: center;
+  color: ${props =>
+    props.type === 'deposit'
+      ? '#51DB61'
+      : props.type === 'withdraw'
+      ? '#F2594E'
+      : '#131313'};
+`
 
-    &:before {
-      content: attr(data-label);
-      float: left;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-  }
+export const UpIcon = styled(TrendingUp)`
+  margin-left: 6px;
+`
+
+export const DownIcon = styled(TrendingDown)`
+  margin-left: 6px;
+`
+
+export const DeleteIcon = styled(Trash)`
+  cursor: pointer;
 `

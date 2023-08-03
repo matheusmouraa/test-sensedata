@@ -23,13 +23,13 @@ export const InputControl = styled(Field)`
   padding: 10px 12px;
   max-width: 100%;
 
-  background: #5e5e5e;
+  background: #fff;
   border: 0;
   border-radius: 8px;
 
   font-size: 21px;
   letter-spacing: -0.07px;
-  color: #f5f8fa;
+  color: #131313;
 
   transition: all 300ms linear 0s;
 
@@ -44,13 +44,13 @@ export const StyledCurrencyInputField = styled(CurrencyInputField)`
   padding: 10px 12px;
   max-width: 100%;
 
-  background: #5e5e5e;
+  background: #fff;
   border: 0;
   border-radius: 8px;
 
   font-size: 21px;
   letter-spacing: -0.07px;
-  color: #f5f8fa;
+  color: #131313;
 
   transition: all 300ms linear 0s;
 

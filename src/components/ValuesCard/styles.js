@@ -12,6 +12,7 @@ export const Container = styled.article`
   background: ${props => props.color};
   border-radius: 100%;
   box-shadow: 10px 10px 7px -1px rgba(0, 0, 0, 0.4);
+  color: #f5f8fa;
 `
 
 export const Title = styled.strong`

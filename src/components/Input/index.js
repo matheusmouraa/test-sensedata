@@ -15,7 +15,7 @@ export const Input = ({ label, name, value, style, ...rest }) => {
     <Container>
       <Label
         style={{
-          color: `${meta.touched && meta.error ? 'red' : '#f5f8fa'}`
+          color: `${meta.touched && meta.error ? 'red' : '#131313'}`
         }}
       >
         {label}
@@ -39,7 +39,7 @@ export const InputPrice = ({ label, name, style, error, ...rest }) => {
     <Container>
       <Label
         style={{
-          color: `${error ? 'red' : '#f5f8fa'}`
+          color: `${error ? 'red' : '#131313'}`
         }}
       >
         {label}

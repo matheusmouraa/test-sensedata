@@ -19,7 +19,7 @@ export const MainContent = styled.main`
   height: 100vh;
   width: 100vw;
 
-  background: #333;
+  background: #f5f8fa;
 
-  color: #f5f8fa;
+  color: #131313;
 `
