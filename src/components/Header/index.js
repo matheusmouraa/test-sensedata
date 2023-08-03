@@ -20,7 +20,6 @@ export const Header = () => {
       values.total -= parseFloat(item.value)
     }
   })
-  console.log(values)
 
   return (
     <Container>

@@ -64,10 +64,6 @@ const TransactionsProvider = ({ children }) => {
     getStorage()
   }, [])
 
-  useEffect(() => {
-    console.log(atualFilter)
-  }, [atualFilter])
-
   return (
     <TransactionsContext.Provider
       value={{
