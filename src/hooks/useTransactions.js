@@ -20,6 +20,15 @@ const TransactionsProvider = ({ children }) => {
     localStorage.setItem('transactions', JSON.stringify(allTransactions))
   }
 
+  const editTransaction = data => {
+    const transactionremoved = transactions.filter(
+      transactions => transactions.id !== data.id
+    )
+    const allTransactions = [...transactionremoved, data]
+    setTransactions(allTransactions)
+    localStorage.setItem('transactions', JSON.stringify(allTransactions))
+  }
+
   const deleteTransaction = id => {
     const transactionremoved = transactions.filter(
       transactions => transactions.id !== id
@@ -43,6 +52,7 @@ const TransactionsProvider = ({ children }) => {
         transactions,
         filterTransactions,
         createTransaction,
+        editTransaction,
         deleteTransaction,
         clearStorage
       }}

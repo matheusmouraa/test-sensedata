@@ -27,3 +27,11 @@ export const Title = styled.h2`
   font-size: 23px;
   font-weight: 600;
 `
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  margin-top: 10px;
+  gap: 10px;
+`

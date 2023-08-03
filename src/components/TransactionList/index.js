@@ -33,7 +33,12 @@ export const TransactionList = () => {
         </TableBody>
       </Table>
 
-      <CreateModal isOpen={isOpen} handleClose={() => setIsOpen(false)} />
+      <CreateModal
+        isOpen={isOpen}
+        handleClose={() => {
+          setIsOpen(false)
+        }}
+      />
     </>
   )
 }

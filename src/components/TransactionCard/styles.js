@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-import { Trash, TrendingDown, TrendingUp } from 'react-feather'
+import { Edit, Trash, TrendingDown, TrendingUp } from 'react-feather'
 
 export const Container = styled.tr``
 
@@ -25,5 +25,11 @@ export const DownIcon = styled(TrendingDown)`
 `
 
 export const DeleteIcon = styled(Trash)`
+  cursor: pointer;
+`
+
+export const EditIcon = styled(Edit)`
+  margin-right: 10px;
+
   cursor: pointer;
 `
