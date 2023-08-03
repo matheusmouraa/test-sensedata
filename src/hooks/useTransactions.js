@@ -12,6 +12,8 @@ const TransactionsProvider = ({ children }) => {
     }
   }
 
+  const filterTransactions = type => {}
+
   const createTransaction = newTransaction => {
     const allTransactions = [...transactions, newTransaction]
     setTransactions(allTransactions)
@@ -39,6 +41,7 @@ const TransactionsProvider = ({ children }) => {
     <TransactionsContext.Provider
       value={{
         transactions,
+        filterTransactions,
         createTransaction,
         deleteTransaction,
         clearStorage

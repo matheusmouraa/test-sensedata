@@ -17,6 +17,7 @@ export const Container = styled.button`
   font-size: 20px;
   font-weight: 400;
   white-space: nowrap;
+  color: #f5f8fa;
 
   cursor: pointer;
 

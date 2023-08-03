@@ -29,6 +29,7 @@ export const InputControl = styled(Field)`
 
   font-size: 21px;
   letter-spacing: -0.07px;
+  color: #f5f8fa;
 
   transition: all 300ms linear 0s;
 
@@ -49,6 +50,7 @@ export const StyledCurrencyInputField = styled(CurrencyInputField)`
 
   font-size: 21px;
   letter-spacing: -0.07px;
+  color: #f5f8fa;
 
   transition: all 300ms linear 0s;
 

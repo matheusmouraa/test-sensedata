@@ -6,9 +6,9 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    color: #f5f8fa;
     transition: all 300ms linear 0s;
   }
+
 `
 
 export const MainContent = styled.main`
@@ -20,4 +20,6 @@ export const MainContent = styled.main`
   width: 100vw;
 
   background: #333;
+
+  color: #f5f8fa;
 `

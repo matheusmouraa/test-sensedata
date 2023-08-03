@@ -1,4 +1,5 @@
 import { useField } from 'formik'
+
 import {
   Container,
   InputControl,
@@ -6,7 +7,8 @@ import {
   StyledCurrencyInputField
 } from './styles'
 
-export const Input = ({ label, name, style, ...rest }) => {
+export const Input = ({ label, name, value, style, ...rest }) => {
+  // eslint-disable-next-line no-unused-vars
   const [field, meta] = useField(name)
 
   return (
@@ -19,6 +21,7 @@ export const Input = ({ label, name, style, ...rest }) => {
         {label}
       </Label>
       <InputControl
+        defaultValue={value}
         className="form-control"
         name={name}
         style={{
@@ -31,14 +34,12 @@ export const Input = ({ label, name, style, ...rest }) => {
   )
 }
 
-export const InputPrice = ({ label, name, style, ...rest }) => {
-  const [field, meta] = useField(name)
-
+export const InputPrice = ({ label, name, style, error, ...rest }) => {
   return (
     <Container>
       <Label
         style={{
-          color: `${meta.touched && meta.error ? 'red' : '#f5f8fa'}`
+          color: `${error ? 'red' : '#f5f8fa'}`
         }}
       >
         {label}
@@ -48,7 +49,7 @@ export const InputPrice = ({ label, name, style, ...rest }) => {
         name={name}
         style={{
           ...style,
-          border: `${meta.touched && meta.error ? '2.5px solid red' : '0'}`
+          border: `${error ? '2.5px solid red' : '0'}`
         }}
         {...rest}
       />
