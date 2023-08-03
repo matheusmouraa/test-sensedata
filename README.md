@@ -1,8 +1,6 @@
 # SenFinança
 
-O projeto consiste em duas paginas, na primeira é exibido um campo de busca onde pode ser feito o filtro de heróis pelo seu nome, quadrinho que participou e serie que participou, ao lado, é possível ver a lista de heróis que são compatíveis com os filtros selecionados, com o seu nome, descrição, foto e também avaliar de um a cinco o quanto você gosta daquele herói.
-
-Já na segunda pagina, você pode visualizar todos os personagens que foram avaliados, filtrar por nome e a nota mínima que foi dada a ele, também é permitido excluir a avalição dada a um personagem especifico ou excluir todas as avaliações.
+O projeto consiste em um controle de finanças onde o usuario pode salvar suas movimentações de entrada e saida e organizalas por categoria, assim como ver o subtotal de todas as transacoes. Clicando nos cabeçarios da tabela que indicam os campos é possivel filtrar por ordem alfabetica o tipo de propriedade que voce clicar e, se for valor, a aplicação ira filtrar pelo menor valor ate o maior.
 
 ![senfinanca-00](./public/senfinanca-0.png)
 
