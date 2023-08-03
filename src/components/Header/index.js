@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
 import { useTransactions } from '../../hooks/useTransactions'
+
 import { ValuesCard } from '../ValuesCard'
+
 import { Container, Content, Title } from './styles'
 
 export const Header = () => {
@@ -11,6 +12,7 @@ export const Header = () => {
     withdraws: 0,
     total: 0
   }
+
   transactions.forEach(item => {
     if (item.type === 'deposit') {
       values.deposits += parseFloat(item.value)

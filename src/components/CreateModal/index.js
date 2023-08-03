@@ -1,18 +1,19 @@
+import { useState } from 'react'
+
 import { useTransactions } from '../../hooks/useTransactions'
 import { ConfigProvider, Modal } from 'antd'
-import { v4 } from 'uuid'
+import { toast } from 'react-toastify'
 import { Formik } from 'formik'
 import schema from './schema'
 import moment from 'moment'
 import 'moment/locale/pt-br'
+import { v4 } from 'uuid'
 
 import { Input, InputPrice } from '../Input'
+import { Button } from '../Button'
 import { Select } from '../Select'
 
 import { ButtonContainer, Container, FormContainer, Title } from './styles'
-import { toast } from 'react-toastify'
-import { Button } from '../Button'
-import { useState } from 'react'
 
 const options = [
   {
