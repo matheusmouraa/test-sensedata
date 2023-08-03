@@ -12,7 +12,7 @@ import { Select } from '../Select'
 import { ButtonContainer, Container, FormContainer, Title } from './styles'
 import { toast } from 'react-toastify'
 import { Button } from '../Button'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const options = [
   {
@@ -29,43 +29,6 @@ export const CreateModal = ({ isOpen, handleClose, data }) => {
   const { createTransaction, editTransaction } = useTransactions()
 
   const [editMode, setEditMode] = useState(data?.id ? true : false)
-
-  const convertCurrencyToNumber = value => {
-    const sanitizedValue = value?.replace(/[^\d.,]/g, '')
-    const hasDecimalSeparator = sanitizedValue?.includes(',')
-    let numericValue = parseFloat(sanitizedValue?.replace(/[.,]/g, ''))
-
-    if (hasDecimalSeparator) {
-      numericValue /= 100
-    }
-
-    return numericValue
-  }
-
-  const handleInputChange = (value, setValues) => {
-    const maxLength = 10
-    const numericValue = convertCurrencyToNumber(value)
-
-    if (numericValue > 99.99) {
-      return
-    }
-
-    if (numericValue.toString().length - 3 > maxLength) {
-      return
-    }
-    console.log(value)
-    setValues(values => ({ ...values, value }))
-  }
-
-  const handleCancelEditMode = setValues => {
-    setEditMode(false)
-    setValues({
-      title: '',
-      type: '',
-      category: '',
-      value: ''
-    })
-  }
 
   const handleSubmit = (values, actions) => {
     if (editMode) {
@@ -87,7 +50,6 @@ export const CreateModal = ({ isOpen, handleClose, data }) => {
         category: '',
         value: ''
       })
-      setEditMode(false)
       toast.success('Transacão salva com sucesso.', {
         position: toast.POSITION.TOP_RIGHT
       })
@@ -127,7 +89,7 @@ export const CreateModal = ({ isOpen, handleClose, data }) => {
             validationSchema={schema}
             onSubmit={handleSubmit}
           >
-            {({ values, setValues, errors }) => (
+            {({ values, setValues }) => (
               <FormContainer>
                 <Input label="Título*:" name="title" value={values.title} />
 
@@ -146,9 +108,10 @@ export const CreateModal = ({ isOpen, handleClose, data }) => {
                   groupSeparator="."
                   decimalScale={2}
                   allowNegativeValue={false}
-                  value={values.value}
-                  onValueChange={value => handleInputChange(value, setValues)}
-                  error={errors.value}
+                  name="value"
+                  onChange={value =>
+                    setValues(state => ({ ...state, value: value }))
+                  }
                 />
 
                 <Input
@@ -164,7 +127,7 @@ export const CreateModal = ({ isOpen, handleClose, data }) => {
                         width: '160px'
                       }}
                       type="button"
-                      onClick={() => handleCancelEditMode(setValues)}
+                      onClick={() => handleClose()}
                     >
                       Cancelar
                     </Button>

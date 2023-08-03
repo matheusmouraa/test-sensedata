@@ -34,12 +34,14 @@ export const Input = ({ label, name, value, style, ...rest }) => {
   )
 }
 
-export const InputPrice = ({ label, name, style, error, ...rest }) => {
+export const InputPrice = ({ label, name, style, onChange, ...rest }) => {
+  const [field, meta] = useField(name)
+
   return (
     <Container>
       <Label
         style={{
-          color: `${error ? 'red' : '#131313'}`
+          color: `${meta.touched && meta.error ? 'red' : '#131313'}`
         }}
       >
         {label}
@@ -47,9 +49,11 @@ export const InputPrice = ({ label, name, style, error, ...rest }) => {
       <StyledCurrencyInputField
         className="form-control"
         name={name}
+        onValueChange={value => onChange(value)}
+        value={meta.value}
         style={{
           ...style,
-          border: `${error ? '2.5px solid red' : '0'}`
+          border: `${meta.touched && meta.error ? '2.5px solid red' : '0'}`
         }}
         {...rest}
       />
