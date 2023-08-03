@@ -3,7 +3,14 @@ import { useState } from 'react'
 import { Button } from '../Button'
 import { CreateModal } from '../CreateModal'
 
-import { ArrowIcon, Content, Table, TableBody, TableHeader } from './styles'
+import {
+  ArrowIcon,
+  Container,
+  Content,
+  Table,
+  TableBody,
+  TableHeader
+} from './styles'
 import { useTransactions } from '../../hooks/useTransactions'
 import { TransactionCard } from '../TransactionCard'
 import { HeaderOptions } from '../../utils'
@@ -22,8 +29,11 @@ export const TransactionList = () => {
   }
 
   return (
-    <>
-      <Button style={{ marginBottom: '40px' }} onClick={() => setIsOpen(true)}>
+    <Container>
+      <Button
+        style={{ alignSelf: 'flex-end', width: '160px', marginRight: '20px' }}
+        onClick={() => setIsOpen(true)}
+      >
         Nova transação
       </Button>
 
@@ -49,6 +59,6 @@ export const TransactionList = () => {
           setIsOpen(false)
         }}
       />
-    </>
+    </Container>
   )
 }

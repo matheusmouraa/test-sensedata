@@ -42,18 +42,13 @@ export const CreateModal = ({ isOpen, handleClose, data, onSubmit }) => {
       })
     } else {
       const atualDate = moment
-        .utc(new Date(), 'YYYY-MM-DD')
+        .utc(new Date(), 'YYYY-MM-DD HH:mm')
         .local()
-        .format('DD/MM/YYYY')
+        .format('DD/MM/YYYY HH:mm')
       let payload = { ...values, id: v4(), date: atualDate }
 
       createTransaction(payload)
-      actions.setValues({
-        title: '',
-        type: '',
-        category: '',
-        value: ''
-      })
+      actions.resetForm()
       toast.success('Transacão salva com sucesso.', {
         position: toast.POSITION.TOP_RIGHT
       })

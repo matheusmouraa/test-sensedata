@@ -2,9 +2,17 @@ import { styled } from 'styled-components'
 
 import { ArrowDown } from 'react-feather'
 
-export const Table = styled.table`
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
   width: 100%;
   max-width: 1300px;
+`
+
+export const Table = styled.table`
+  width: 100%;
 
   background: #fff;
 `
