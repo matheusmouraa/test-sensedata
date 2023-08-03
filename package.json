@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.8.1",
     "formik": "^2.2.9",
+    "jest": "^27.5.1",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-currency-input-field": "^3.6.10",

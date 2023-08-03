@@ -25,12 +25,16 @@ const options = [
   }
 ]
 
-export const CreateModal = ({ isOpen, handleClose, data }) => {
+export const CreateModal = ({ isOpen, handleClose, data, onSubmit }) => {
   const { createTransaction, editTransaction } = useTransactions()
 
   const [editMode, setEditMode] = useState(data?.id ? true : false)
 
   const handleSubmit = (values, actions) => {
+    if (onSubmit) {
+      onSubmit(values)
+      return
+    }
     if (editMode) {
       editTransaction(values)
       toast.success('Transacão editada com sucesso.', {
@@ -91,13 +95,19 @@ export const CreateModal = ({ isOpen, handleClose, data }) => {
           >
             {({ values, setValues }) => (
               <FormContainer>
-                <Input label="Título*:" name="title" value={values.title} />
+                <Input
+                  label="Título*:"
+                  id="title"
+                  name="title"
+                  value={values.title}
+                />
 
                 <Select
                   options={options}
                   label="Tipo*:"
                   name="type"
                   defaultValue={values.type ?? ''}
+                  id="type"
                 />
 
                 <InputPrice
@@ -109,6 +119,7 @@ export const CreateModal = ({ isOpen, handleClose, data }) => {
                   decimalScale={2}
                   allowNegativeValue={false}
                   name="value"
+                  id="value"
                   onChange={value =>
                     setValues(state => ({ ...state, value: value }))
                   }
@@ -117,7 +128,9 @@ export const CreateModal = ({ isOpen, handleClose, data }) => {
                 <Input
                   label="Categoria*:"
                   name="category"
+                  id="category"
                   value={values.category}
+                  placeholder="Categoria"
                 />
 
                 <ButtonContainer>

@@ -8,6 +8,7 @@ export const Select = ({ label, style, options, name, ...rest }) => {
     <Container>
       {label && (
         <Label
+          htmlFor={name}
           style={{
             color: `${meta.touched && meta.error ? 'red' : '#131313'}`
           }}
@@ -27,8 +28,10 @@ export const Select = ({ label, style, options, name, ...rest }) => {
         {...rest}
       >
         <option value="">Selecione uma opção</option>
-        {options.map(item => (
-          <option value={item.value}>{item.label}</option>
+        {options.map((item, i) => (
+          <option key={i} value={item.value}>
+            {item.label}
+          </option>
         ))}
       </SelectFormikControl>
     </Container>
