@@ -4,6 +4,7 @@ const TransactionsContext = createContext({})
 
 const TransactionsProvider = ({ children }) => {
   const [transactions, setTransactions] = useState([])
+  const [atualFilter, setAtualFilter] = useState('')
 
   const getStorage = () => {
     const data = localStorage.getItem('transactions')
@@ -12,7 +13,24 @@ const TransactionsProvider = ({ children }) => {
     }
   }
 
-  const filterTransactions = type => {}
+  const filterTransactions = type => {
+    const atualType = type === '' ? 'date' : type
+
+    let arr = transactions
+    arr = arr.slice().sort((a, b) => {
+      if (a[atualType] < b[atualType]) {
+        return -1
+      }
+      if (a[atualType] > b[atualType]) {
+        return 1
+      }
+      return 0
+    })
+
+    setAtualFilter(type)
+    setTransactions(arr)
+    localStorage.setItem('transactions', JSON.stringify(arr))
+  }
 
   const createTransaction = newTransaction => {
     const allTransactions = [...transactions, newTransaction]
@@ -46,10 +64,15 @@ const TransactionsProvider = ({ children }) => {
     getStorage()
   }, [])
 
+  useEffect(() => {
+    console.log(atualFilter)
+  }, [atualFilter])
+
   return (
     <TransactionsContext.Provider
       value={{
         transactions,
+        atualFilter,
         filterTransactions,
         createTransaction,
         editTransaction,

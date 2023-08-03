@@ -3,14 +3,23 @@ import { useState } from 'react'
 import { Button } from '../Button'
 import { CreateModal } from '../CreateModal'
 
-import { Content, Table, TableBody, TableHeader } from './styles'
+import { ArrowIcon, Content, Table, TableBody, TableHeader } from './styles'
 import { useTransactions } from '../../hooks/useTransactions'
 import { TransactionCard } from '../TransactionCard'
+import { HeaderOptions } from '../../utils'
 
 export const TransactionList = () => {
-  const { transactions, filterTransactions } = useTransactions()
+  const { transactions, filterTransactions, atualFilter } = useTransactions()
 
   const [isOpen, setIsOpen] = useState(false)
+
+  const changeFilter = type => {
+    if (atualFilter === type) {
+      filterTransactions('')
+    } else {
+      filterTransactions(type)
+    }
+  }
 
   return (
     <>
@@ -20,11 +29,12 @@ export const TransactionList = () => {
 
       <Table>
         <TableHeader>
-          <Content>Título</Content>
-          <Content>Tipo</Content>
-          <Content>Valor</Content>
-          <Content>Categoria</Content>
-          <Content>Data</Content>
+          {HeaderOptions.map(item => (
+            <Content onClick={() => changeFilter(item.value)}>
+              {item.label}
+              {atualFilter === item.value && <ArrowIcon size={19} />}
+            </Content>
+          ))}
         </TableHeader>
         <TableBody>
           {transactions.map(data => (
