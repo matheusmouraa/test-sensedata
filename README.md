@@ -6,11 +6,11 @@ O projeto consiste em um controle de finanças onde o usuario pode salvar suas m
 
 ![senfinanca-01](./public/senfinanca-1.png)
 
-<!-- ## Deploy da aplicação
+## Deploy da aplicação
 
 O projeto está no ar no seguinte link:
 
-https://marvel-heroes-7o50s34l3-m4ty21.vercel.app/ -->
+<https://senfinanca-amber.vercel.app/>
 
 ## Clone o repositório e instale as dependências
 
