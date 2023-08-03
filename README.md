@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# SenFinança
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O projeto consiste em duas paginas, na primeira é exibido um campo de busca onde pode ser feito o filtro de heróis pelo seu nome, quadrinho que participou e serie que participou, ao lado, é possível ver a lista de heróis que são compatíveis com os filtros selecionados, com o seu nome, descrição, foto e também avaliar de um a cinco o quanto você gosta daquele herói.
 
-## Available Scripts
+Já na segunda pagina, você pode visualizar todos os personagens que foram avaliados, filtrar por nome e a nota mínima que foi dada a ele, também é permitido excluir a avalição dada a um personagem especifico ou excluir todas as avaliações.
 
-In the project directory, you can run:
+![senfinanca-00](./public/senfinanca-0.png)
 
-### `npm start`
+![senfinanca-01](./public/senfinanca-1.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- ## Deploy da aplicação
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+O projeto está no ar no seguinte link:
 
-### `npm test`
+https://marvel-heroes-7o50s34l3-m4ty21.vercel.app/ -->
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Clone o repositório e instale as dependências
 
-### `npm run build`
+Para rodar o projeto é preciso ter instalado o Node.Js e as dependências usadas.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Instalando Node.Js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Instale siguindo as instruções na [Documentação do Node.Js](https://nodejs.org/pt-br/download/).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Clonando o repositório
 
-### `npm run eject`
+Com método HTTPS:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```git
+  git clone https://github.com/matheusmouraa/test-sensedata.git
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Com método SSH:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```git
+  git clone git@github.com:matheusmouraa/test-sensedata.git
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Depois, acesse a pasta do repositório pelo terminal:
 
-## Learn More
+```bash
+  cd test-sensedata
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Instalando as dependências
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Agora, instale todas bibliotecas e dependências do projeto:
 
-### Code Splitting
+```bash
+  npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Rodando projeto
 
-### Analyzing the Bundle Size
+Após clonar o repositório e instalar as dependências necessárias, para rodar o projeto basta usar o seguinte comando:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+  npm start run
+```
 
-### Making a Progressive Web App
+## Tecnologias e bibliotecas utilizadas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React
+- Testing-Libary
+- Styled-components
+- Formik
+- Jest
+- AntD
+- Yup
+- Moment
