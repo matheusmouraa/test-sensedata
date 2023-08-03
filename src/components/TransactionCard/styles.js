@@ -33,3 +33,9 @@ export const EditIcon = styled(Edit)`
 
   cursor: pointer;
 `
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+`

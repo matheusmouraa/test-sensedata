@@ -9,6 +9,7 @@ import {
   Content,
   Table,
   TableBody,
+  TableContainer,
   TableHeader
 } from './styles'
 import { useTransactions } from '../../hooks/useTransactions'
@@ -37,21 +38,23 @@ export const TransactionList = () => {
         Nova transação
       </Button>
 
-      <Table>
-        <TableHeader>
-          {HeaderOptions.map(item => (
-            <Content onClick={() => changeFilter(item.value)}>
-              {item.label}
-              {atualFilter === item.value && <ArrowIcon size={19} />}
-            </Content>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {transactions.map(data => (
-            <TransactionCard data={data} key={data.id} />
-          ))}
-        </TableBody>
-      </Table>
+      <TableContainer>
+        <Table>
+          <TableHeader>
+            {HeaderOptions.map(item => (
+              <Content onClick={() => changeFilter(item.value)}>
+                {item.label}
+                {atualFilter === item.value && <ArrowIcon size={19} />}
+              </Content>
+            ))}
+          </TableHeader>
+          <TableBody>
+            {transactions.map(data => (
+              <TransactionCard data={data} key={data.id} />
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
 
       <CreateModal
         isOpen={isOpen}

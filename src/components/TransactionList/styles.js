@@ -7,12 +7,29 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 20px;
 
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+`
+
+export const TableContainer = styled.div`
   width: 100%;
   max-width: 1300px;
+
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    overflow: scroll;
+  }
 `
 
 export const Table = styled.table`
   width: 100%;
+  max-width: 1300px;
+
+  overflow: scroll;
 
   background: #fff;
 `

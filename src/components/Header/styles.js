@@ -18,6 +18,14 @@ export const Title = styled.h1`
 
 export const Content = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 160px;
+  grid-template-columns: 1fr;
+  gap: 60px;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `
